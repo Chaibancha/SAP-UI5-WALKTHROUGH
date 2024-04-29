@@ -18,18 +18,18 @@ sap.ui.define(
         var oModel = new JSONModel(oData);
         this.getView().setModel(oModel);
 
-        //set i8n model on the view
-        var i8nModel = new ResourceModel({
-            bundleName: "sap.ui.demo.walkthrough.i8n.i8n",
+        //set i18n model on the view
+        var i18nModel = new ResourceModel({
+            bundleName: "sap.ui.demo.walkthrough.i18n.i18n",
             supportLocales: [""],
             fallbackLocale: "",
         });
-        this.getView().setModel(i8nModel, "i8n")
+        this.getView().setModel(i18nModel, "i18n")
       },
 
       onShowHello: function () {
-        // read msg from i8n Model
-        var oBundle = this.getView().getModel("i8n").getResourceBundle();
+        // read msg from i18n Model
+        var oBundle = this.getView().getModel("i18n").getResourceBundle();
         var sRecipient = this.getView().getModel().getProperty("/recipient/name");
         var sMsg = oBundle.getText("helloMsg", [sRecipient]);
 
